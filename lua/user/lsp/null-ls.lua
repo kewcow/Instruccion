@@ -1,4 +1,5 @@
 local null_ls_status_ok, null_ls = pcall(require, "null-ls")
+-- local nvim_lsp = require("lspconfig")
 if not null_ls_status_ok then
 	return
 end
@@ -6,7 +7,7 @@ end
 -- https://github.com/jose-elias-alvarez/null-ls.nvim/tree/main/lua/null-ls/builtins/formatting
 local formatting = null_ls.builtins.formatting
 -- https://github.com/jose-elias-alvarez/null-ls.nvim/tree/main/lua/null-ls/builtins/diagnostics
-local diagnostics = null_ls.builtins.diagnostics
+-- local diagnostics = null_ls.builtins.diagnostics
 
 null_ls.setup({
 	debug = false,
@@ -17,3 +18,11 @@ null_ls.setup({
     -- diagnostics.flake8
 	},
 })
+
+--[[nvim_lsp.denols.setup({
+  root_dir = nvim_lsp.util.root_pattern("deno.json"),
+})
+
+nvim_lsp.tsserver.setup({
+  root_dir = nvim_lsp.util.root_pattern("package.json"),
+})]]--
