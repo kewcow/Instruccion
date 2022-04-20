@@ -14,3 +14,5 @@ if fn.empty(fn.glob(install_path)) > 0 then
   print "Installing Packer in Nvim.."
   vim.cmd [[packadd packer.nvim]]
 end
+
+--> Uppgrade -->
